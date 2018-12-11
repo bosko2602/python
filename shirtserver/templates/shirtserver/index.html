@@ -1,0 +1,13 @@
+{% load static%}
+
+<h1>Boškove мајице</h1>
+
+{% if shirt_list %}
+    <ul>
+    {% for s in shirt_list %}
+        <li><a href="{% url 'shirtserver:detail' s.id %}">{{ s.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shirt are available.</p>
+{% endif %}
